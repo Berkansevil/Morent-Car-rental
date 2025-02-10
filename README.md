@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MORENT Car Rental Backend
 
 The **MORENT Car Rental Backend** is a comprehensive backend system designed for the MORENT car rental website. This API provides essential services for seamless user interaction, including user registration, authentication, vehicle searching, booking management, and payment processing. Security is a key focus, ensuring user safety and data integrity with JWT authentication and secure payment gateways.
@@ -79,3 +80,6 @@ To see the contributing team, you can check out this link: [Contributors](https:
 ---
 
 Happy coding! 🚗💻
+=======
+# Morent-Car-rental
+>>>>>>> b3b24ce01e508ec7447bc1e3bf0f5bc36f2fd64d
