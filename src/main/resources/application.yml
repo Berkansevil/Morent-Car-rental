@@ -1,0 +1,46 @@
+server :
+  port : 8082
+
+spring:
+  application:
+    name: morent
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/morent
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: group-id
+      auto-offset-reset: earliest
+    producer:
+      retries: 0
+    template:
+      default-topic: notification-topic
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/morent
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+jwt:
+  auth:
+    converter:
+      resource-id: morent-rest-api
+      principal-attribute: preferred_username
+
+
